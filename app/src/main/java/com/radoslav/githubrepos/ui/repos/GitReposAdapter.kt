@@ -13,8 +13,6 @@ import com.radoslav.githubrepos.databinding.ItemGithubRepoBinding
 
 class GitReposAdapter :
     PagingDataAdapter<GitRepoItem, GitReposAdapter.RepoViewHolder>(REPO_COMPARATOR) {
-
-
     //az sum nai golemiq lamer
     
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
