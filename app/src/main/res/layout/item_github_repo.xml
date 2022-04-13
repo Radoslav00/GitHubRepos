@@ -20,27 +20,59 @@
         android:layout_toEndOf="@+id/owner_avatar"
         android:ellipsize="end"
         android:maxLines="1"
-        android:paddingBottom="10dp"
+        android:paddingBottom="2dp"
         android:text="Line for repo name"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:textStyle="bold" />
 
+
     <TextView
-        android:id="@+id/text_owner_name"
+        android:id="@+id/text_language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/text_repo_name"
+        android:layout_below="@+id/text_repo_name"
+        android:layout_toEndOf="@+id/owner_avatar"
+        android:drawablePadding="4dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:gravity="center_vertical"
+        android:text="Text for language used"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/text_owner_name"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_language"
         android:layout_toEndOf="@+id/owner_avatar"
         android:drawablePadding="4dp"
         android:ellipsize="end"
         android:gravity="center_vertical"
         android:maxLines="1"
-        android:text="Text for owner name"
+        android:text="Text for owner namedddddd"
         android:textColor="@android:color/black"
         android:textSize="14sp"
         android:textStyle="italic"
         app:drawableStartCompat="@drawable/ic_user_black" />
+
+    <TextView
+        android:id="@+id/text_watchers_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_language"
+        android:layout_toEndOf="@+id/text_owner_name"
+        android:drawablePadding="4dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="1dp"
+        android:text="Text for number of watchers"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="italic" />
+
 
 
 </RelativeLayout>

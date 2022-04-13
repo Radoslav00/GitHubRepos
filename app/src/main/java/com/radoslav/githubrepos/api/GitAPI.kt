@@ -14,7 +14,7 @@ interface GitAPI {
 
     @Headers(
         "Accept: application/vnd.github.v3+json",
-        "Authorization: token $ACCESS_TOKEN"
+        //"Authorization: token $ACCESS_TOKEN"
     )
     @GET("search/repositories")
     suspend fun searchRepos (

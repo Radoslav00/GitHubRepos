@@ -4,9 +4,10 @@ data class GitRepoItem(
     val id: Long,
     val name: String,
     val owner: Owner,
+    val language: String,
     val html_url: String,
     val description: String,
-    val watchers: Int
+    val watchers_count: Int
 ) {
     data class Owner(
         val id: Long,

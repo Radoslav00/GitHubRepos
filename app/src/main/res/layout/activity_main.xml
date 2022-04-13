@@ -6,12 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:padding="4dp"
-        android:clipToPadding="false"
-        tools:listitem="@layout/item_github_repo"
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment_main"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph" />
+
+    <!--
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="4dp"
+            tools:listitem="@layout/fragment_repos" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
