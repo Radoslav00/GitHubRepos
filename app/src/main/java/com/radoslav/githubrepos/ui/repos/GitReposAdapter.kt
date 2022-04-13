@@ -20,7 +20,6 @@ class GitReposAdapter :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
         val binding =
             ItemGithubRepoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-
         return RepoViewHolder(binding)
     }
 
@@ -34,7 +33,6 @@ class GitReposAdapter :
 
     class RepoViewHolder(private val binding: ItemGithubRepoBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
 
         fun bind(repo: GitRepoItem) {
             binding.apply {

@@ -13,6 +13,7 @@ class GitRepository @Inject constructor(private val gitApi: GitAPI) {
         Pager(
             config = PagingConfig(
                 pageSize = 30,
+                prefetchDistance = 15,
                 maxSize = 100,
                 enablePlaceholders = false
             ),
