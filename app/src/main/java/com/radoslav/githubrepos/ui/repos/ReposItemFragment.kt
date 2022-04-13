@@ -24,7 +24,10 @@ class ReposItemFragment : Fragment(R.layout.fragment_repos) {
 
         binding.apply {
             recyclerView.setHasFixedSize(true)
-            recyclerView.adapter = adapter
+            recyclerView.adapter = adapter.withLoadStateHeaderAndFooter(
+                header = ItemRepoLoadStateAdapter { adapter.retry() },
+                footer = ItemRepoLoadStateAdapter { adapter.retry() }
+            )
         }
         viewModel.repos.observe(viewLifecycleOwner) {
             adapter.submitData(viewLifecycleOwner.lifecycle, it)
