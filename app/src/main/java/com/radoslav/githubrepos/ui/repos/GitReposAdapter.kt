@@ -11,10 +11,10 @@ import com.radoslav.githubrepos.R
 import com.radoslav.githubrepos.data.GitRepoItem
 import com.radoslav.githubrepos.databinding.ItemGithubRepoBinding
 
-class GitReposAdapter :
+class GitReposAdapter(private val listener: OnItemClickListener) :
     PagingDataAdapter<GitRepoItem, GitReposAdapter.RepoViewHolder>(REPO_COMPARATOR) {
     //az sum nai golemiq lamer
-    
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
         val binding =
             ItemGithubRepoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -29,8 +29,20 @@ class GitReposAdapter :
         }
     }
 
-    class RepoViewHolder(private val binding: ItemGithubRepoBinding) :
+    inner class RepoViewHolder(private val binding: ItemGithubRepoBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION){
+                    val item = getItem(position)
+                    if(item != null){
+                        listener.onItemClick(item)
+                    }
+                }
+            }
+        }
 
         fun bind(repo: GitRepoItem) {
             binding.apply {
@@ -48,6 +60,11 @@ class GitReposAdapter :
             }
         }
     }
+
+    interface OnItemClickListener {
+        fun onItemClick(repo: GitRepoItem)
+    }
+
 
     companion object {
         private val REPO_COMPARATOR = object : DiffUtil.ItemCallback<GitRepoItem>() {
