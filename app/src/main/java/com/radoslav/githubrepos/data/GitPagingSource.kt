@@ -20,7 +20,8 @@ class GitPagingSource(
         val position = params.key ?: GIT_STARTING_PAGE_INDEX
 
         return try {
-            val response = gitAPI.searchRepos(query, position, params.loadSize)
+            val response =
+                gitAPI.searchRepos(query, position, params.loadSize)
             val repos = response.items
 
             LoadResult.Page(
